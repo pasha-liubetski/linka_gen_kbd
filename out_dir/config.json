@@ -1,0 +1,304 @@
+{
+  "version": "1.2",
+  "description": "Крупная клавиатура 4x3, похожая на 'LINKa. Бумажная клавиатура' <https://linka.su/linka-paperboard/>. Подходит для людей, кому сложно пользоваться экранной клавиатурой меньшего размера из-за плохого зрения, нистагма либо чего-то другого.\n\nАвтор — Паша Любецкий <pasha.liubetski@yandex.com>, лицензия — Creative Commons Attribution 4.0 International (CC-BY 4.0).",
+  "directSet": false,
+  "columns": 4,
+  "rows": 3,
+  "withoutSpace": true,
+  "cards": [
+    {
+      "id": 0,
+      "title": "А",
+      "imagePath": "А.png",
+      "audioPath": "А.wav",
+      "cardType": 0
+    },
+    {
+      "id": 1,
+      "title": "Б",
+      "imagePath": "Б.png",
+      "audioPath": "Б.wav",
+      "cardType": 0
+    },
+    {
+      "id": 2,
+      "title": "В",
+      "imagePath": "В.png",
+      "audioPath": "В.wav",
+      "cardType": 0
+    },
+    {
+      "id": 3,
+      "title": "Г",
+      "imagePath": "Г.png",
+      "audioPath": "Г.wav",
+      "cardType": 0
+    },
+    {
+      "id": 4,
+      "title": "Д",
+      "imagePath": "Д.png",
+      "audioPath": "Д.wav",
+      "cardType": 0
+    },
+    {
+      "id": 5,
+      "title": "Е",
+      "imagePath": "Е.png",
+      "audioPath": "Е.wav",
+      "cardType": 0
+    },
+    {
+      "id": 6,
+      "title": "Ж",
+      "imagePath": "Ж.png",
+      "audioPath": "Ж.wav",
+      "cardType": 0
+    },
+    {
+      "id": 7,
+      "title": "З",
+      "imagePath": "З.png",
+      "audioPath": "З.wav",
+      "cardType": 0
+    },
+    {
+      "id": 8,
+      "title": "И",
+      "imagePath": "И.png",
+      "audioPath": "И.wav",
+      "cardType": 0
+    },
+    {
+      "id": 9,
+      "title": "Й",
+      "imagePath": "Й.png",
+      "audioPath": "Й.wav",
+      "cardType": 0
+    },
+    {
+      "id": 10,
+      "title": "К",
+      "imagePath": "К.png",
+      "audioPath": "К.wav",
+      "cardType": 0
+    },
+    {
+      "id": 11,
+      "title": "Л",
+      "imagePath": "Л.png",
+      "audioPath": "Л.wav",
+      "cardType": 0
+    },
+    {
+      "id": 12,
+      "title": "М",
+      "imagePath": "М.png",
+      "audioPath": "М.wav",
+      "cardType": 0
+    },
+    {
+      "id": 13,
+      "title": "Н",
+      "imagePath": "Н.png",
+      "audioPath": "Н.wav",
+      "cardType": 0
+    },
+    {
+      "id": 14,
+      "title": "О",
+      "imagePath": "О.png",
+      "audioPath": "О.wav",
+      "cardType": 0
+    },
+    {
+      "id": 15,
+      "title": "П",
+      "imagePath": "П.png",
+      "audioPath": "П.wav",
+      "cardType": 0
+    },
+    {
+      "id": 16,
+      "title": "Р",
+      "imagePath": "Р.png",
+      "audioPath": "Р.wav",
+      "cardType": 0
+    },
+    {
+      "id": 17,
+      "title": "С",
+      "imagePath": "С.png",
+      "audioPath": "С.wav",
+      "cardType": 0
+    },
+    {
+      "id": 18,
+      "title": "Т",
+      "imagePath": "Т.png",
+      "audioPath": "Т.wav",
+      "cardType": 0
+    },
+    {
+      "id": 19,
+      "title": "У",
+      "imagePath": "У.png",
+      "audioPath": "У.wav",
+      "cardType": 0
+    },
+    {
+      "id": 20,
+      "title": "Ф",
+      "imagePath": "Ф.png",
+      "audioPath": "Ф.wav",
+      "cardType": 0
+    },
+    {
+      "id": 21,
+      "title": "Х",
+      "imagePath": "Х.png",
+      "audioPath": "Х.wav",
+      "cardType": 0
+    },
+    {
+      "id": 22,
+      "title": "Ц",
+      "imagePath": "Ц.png",
+      "audioPath": "Ц.wav",
+      "cardType": 0
+    },
+    {
+      "id": 23,
+      "title": "Ч",
+      "imagePath": "Ч.png",
+      "audioPath": "Ч.wav",
+      "cardType": 0
+    },
+    {
+      "id": 24,
+      "title": "Ш",
+      "imagePath": "Ш.png",
+      "audioPath": "Ш.wav",
+      "cardType": 0
+    },
+    {
+      "id": 25,
+      "title": "Щ",
+      "imagePath": "Щ.png",
+      "audioPath": "Щ.wav",
+      "cardType": 0
+    },
+    {
+      "id": 26,
+      "title": "Ъ",
+      "imagePath": "Ъ.png",
+      "audioPath": "Ъ.wav",
+      "cardType": 0
+    },
+    {
+      "id": 27,
+      "title": "Ы",
+      "imagePath": "Ы.png",
+      "audioPath": "Ы.wav",
+      "cardType": 0
+    },
+    {
+      "id": 28,
+      "title": "Ь",
+      "imagePath": "Ь.png",
+      "audioPath": "Ь.wav",
+      "cardType": 0
+    },
+    {
+      "id": 29,
+      "title": "Э",
+      "imagePath": "Э.png",
+      "audioPath": "Э.wav",
+      "cardType": 0
+    },
+    {
+      "id": 30,
+      "title": "Ю",
+      "imagePath": "Ю.png",
+      "audioPath": "Ю.wav",
+      "cardType": 0
+    },
+    {
+      "id": 31,
+      "title": "Я",
+      "imagePath": "Я.png",
+      "audioPath": "Я.wav",
+      "cardType": 0
+    },
+    {
+      "id": 32,
+      "title": 0,
+      "imagePath": "0.png",
+      "audioPath": "0.wav",
+      "cardType": 0
+    },
+    {
+      "id": 33,
+      "title": 1,
+      "imagePath": "1.png",
+      "audioPath": "1.wav",
+      "cardType": 0
+    },
+    {
+      "id": 34,
+      "title": 2,
+      "imagePath": "2.png",
+      "audioPath": "2.wav",
+      "cardType": 0
+    },
+    {
+      "id": 35,
+      "title": 3,
+      "imagePath": "3.png",
+      "audioPath": "3.wav",
+      "cardType": 0
+    },
+    {
+      "id": 36,
+      "title": 4,
+      "imagePath": "4.png",
+      "audioPath": "4.wav",
+      "cardType": 0
+    },
+    {
+      "id": 37,
+      "title": 5,
+      "imagePath": "5.png",
+      "audioPath": "5.wav",
+      "cardType": 0
+    },
+    {
+      "id": 38,
+      "title": 6,
+      "imagePath": "6.png",
+      "audioPath": "6.wav",
+      "cardType": 0
+    },
+    {
+      "id": 39,
+      "title": 7,
+      "imagePath": "7.png",
+      "audioPath": "7.wav",
+      "cardType": 0
+    },
+    {
+      "id": 40,
+      "title": 8,
+      "imagePath": "8.png",
+      "audioPath": "8.wav",
+      "cardType": 0
+    },
+    {
+      "id": 41,
+      "title": 9,
+      "imagePath": "9.png",
+      "audioPath": "9.wav",
+      "cardType": 0
+    }
+  ]
+}
