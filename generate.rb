@@ -2,8 +2,13 @@
 require 'json'
 require 'tempfile'
 
-board_columns = 3
-board_rows = 3
+if ARGV.count != 2
+  STDERR.puts "Usage: #{$0} <columns_count> <rows_count>"
+  exit 1
+end
+
+board_columns = ARGV.first 
+board_rows = ARGV.last 
 
 board_descr = "Крупная клавиатура #{board_columns}x#{board_rows}, похожая на 'LINKa. Бумажная клавиатура' <https://linka.su/linka-paperboard/>. Подходит для людей, кому сложно пользоваться экранной клавиатурой меньшего размера из-за плохого зрения, нистагма либо чего-то другого.
 
@@ -117,3 +122,5 @@ FileUtils.rm output_filename, :force => true
 FileUtils.cd(output_dir) do
   system "zip ../#{output_filename} *"
 end
+
+puts "File: #{output_filename} is ready."
