@@ -2,7 +2,7 @@
 require 'json'
 require 'tempfile'
 
-board_columns = 4
+board_columns = 3
 board_rows = 3
 
 board_descr = "Крупная клавиатура #{board_columns}x#{board_rows}, похожая на 'LINKa. Бумажная клавиатура' <https://linka.su/linka-paperboard/>. Подходит для людей, кому сложно пользоваться экранной клавиатурой меньшего размера из-за плохого зрения, нистагма либо чего-то другого.
@@ -26,6 +26,18 @@ template_file = Tempfile.new(['linka_template', '.png'])
 
 symbols = [ ('А'..'Я').to_a, (0..9).to_a ].flatten
 
+def get_space_hash(card_id = 0)
+  card_space_hash = {
+    id: card_id,
+    title: ' ',
+    imagePath: "space.png",
+    audioPath: "space.wav",
+    cardType: 0
+  }
+
+  card_space_hash
+end
+
 def get_card_hash(card_title, card_id = 0)
   card_template_hash = {
     id: card_id,
@@ -38,7 +50,7 @@ def get_card_hash(card_title, card_id = 0)
   card_template_hash
 end
 
-i = 0
+i = 1 
 
 symbols_hashes = symbols.map do |letter|
   out = get_card_hash(letter, i)
@@ -48,6 +60,8 @@ symbols_hashes = symbols.map do |letter|
   out
 end
 
+output_hashes = [ get_space_hash() ] + symbols_hashes
+
 src_hash = {
   version: '1.2',
   description: board_descr,
@@ -55,7 +69,7 @@ src_hash = {
   columns: board_columns,
   rows: board_rows,
   withoutSpace: true,
-  cards: symbols_hashes
+  cards: output_hashes
 }
 
 puts "Re-creating #{output_dir}..."
@@ -74,6 +88,11 @@ puts "Generating template: #{template_file.path}"
 template_str = "convert -size #{img_size} xc:#{bg_color} #{template_file.path}"
 puts template_str
 system template_str
+
+puts "Generating space symbol..."
+
+FileUtils.cp(template_file.path, "#{output_dir}/space.png")
+system "echo 'пробел' | RHVoice-test -R 44100 -p #{rhvoice_voice} -o #{output_dir}/space.wav"
 
 puts "Generating letters PNGs..."
 
