@@ -10,7 +10,9 @@ end
 board_columns = ARGV.first 
 board_rows = ARGV.last 
 
-board_descr = "Крупная клавиатура #{board_columns}x#{board_rows}, похожая на 'LINKa. Бумажная клавиатура' <https://linka.su/linka-paperboard/>. Подходит для людей, кому сложно пользоваться экранной клавиатурой меньшего размера из-за плохого зрения, нистагма либо чего-то другого.
+board_descr = "Крупная клавиатура #{board_columns}x#{board_rows}, похожая на 'LINKa. Бумажная клавиатура' <https://linka.su/linka-paperboard/>.
+
+Подходит для людей, кому сложно пользоваться экранной клавиатурой меньшего размера из-за плохого зрения, нистагма либо чего-то другого.
 
 Автор — Паша Любецкий <pasha.liubetski@yandex.com>, лицензия — Creative Commons Attribution 4.0 International (CC-BY 4.0)."
 
@@ -46,7 +48,7 @@ end
 def get_card_hash(card_title, card_id = 0)
   card_template_hash = {
     id: card_id,
-    title: card_title,
+    title: "#{card_title}",
     imagePath: "#{card_title}.png",
     audioPath: "#{card_title}.wav",
     cardType: 0
