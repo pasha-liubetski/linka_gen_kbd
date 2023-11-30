@@ -20,7 +20,8 @@ output_filename = "kbd_#{board_columns}x#{board_rows}.linka"
 
 output_dir = 'out_dir'
 
-font_file = '/usr/share/fonts/truetype/lato/Lato-Black.ttf'
+#font_file = '/usr/share/fonts/truetype/lato/Lato-Black.ttf'
+font_file = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 bg_color = 'white'
 fg_color = 'black'
@@ -31,6 +32,7 @@ rhvoice_voice = 'anna'
 
 template_file = Tempfile.new(['linka_template', '.png'])
 
+space_symbol = "␣"
 symbols = [ ('А'..'Я').to_a, (0..9).to_a ].flatten
 
 def get_space_hash(card_id = 0)
@@ -98,7 +100,12 @@ system template_str
 
 puts "Generating space symbol..."
 
-FileUtils.cp(template_file.path, "#{output_dir}/space.png")
+#FileUtils.cp(template_file.path, "#{output_dir}/space.png")
+
+space_str = "convert -font #{font_file} -fill #{fg_color} -gravity center -pointsize #{pointsize} -draw 'text 0,0 \"#{space_symbol}\"' #{template_file.path} #{output_dir}/space.png"
+
+system space_str
+
 system "echo 'пробел' | RHVoice-test -R 44100 -p #{rhvoice_voice} -o #{output_dir}/space.wav"
 
 puts "Generating letters PNGs..."
