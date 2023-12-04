@@ -19,8 +19,8 @@ class SymGenerator
     ['!', '!', '_exclamation.png']
   ]
 
-  @@letters_en = ('A'..'Z').map { |e| [e, e, "#{e}.png"] }
-  @@letters_ru = ('А'..'Я').map { |e| [e, e, "#{e}.png"] }
+  @@letters_en = ('A'..'Z').map { |e| [e, e.downcase(), "#{e}.png"] }
+  @@letters_ru = ('А'..'Я').map { |e| [e, e.downcase(), "#{e}.png"] }
   @@digits = (0..9).map {|e| ["#{e}", "#{e}", "#{e}.png"] }
   @@all = @@digits + @@letters_en + @@letters_ru + @@special_symbols + @@space_symbol
 
