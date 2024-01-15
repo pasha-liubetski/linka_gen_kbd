@@ -19,9 +19,21 @@ class SymGenerator
     ['!', '!', '_exclamation.png']
   ]
 
-  @@letters_en = ('A'..'Z').map { |e| [e, e.downcase(), "#{e}.png"] }
-  @@letters_ru = ('А'..'Я').map { |e| [e, e.downcase(), "#{e}.png"] }
+  @@translit = {
+    'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', \
+    'е' => 'e', 'ё' => 'yo', 'ж' => 'zh', 'з' => 'z', 'и' => 'i', \
+    'й' => 'j', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', \
+    'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', \
+    'у' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c', 'ч' => 'ch', \
+    'ш' => 'sh', 'щ' => 'shh', 'ы' => 'y', 'э' => 'eh', 'ю' => 'yu', \
+    'я' => 'ya', 'ъ' => 'hard_sign', 'ь' => 'soft_sign'
+  }
+
   @@digits = (0..9).map {|e| ["#{e}", "#{e}", "#{e}.png"] }
+
+  @@letters_en = ('a'..'z').map { |e| [e.upcase, e, "en_#{e}.png"] }
+  @@letters_ru = ('а'..'я').map { |e| [e.upcase, e, "ru_#{@@translit[e]}.png"] }
+  
   @@all = @@digits + @@letters_en + @@letters_ru + @@special_symbols + @@space_symbol
 
   def self.digits()
