@@ -9,25 +9,26 @@ class AssetsGenerator
   @@img_size = '1280x1280'
   @@point_size = 1024
 
+  def initialize()
+    @template_file = Tempfile.new(['linka_template', '.png'])
+
+    "convert -size #{@@img_size} xc:#{@@bg_color} #{@template_file.path}".run
+
+    clean_dir
+  end
+
   def clean_dir()
     FileUtils.rm_r ASSETS_DIR, :force => true
     FileUtils.mkdir ASSETS_DIR
   end
 
-  def initialize()
-    @template_file = Tempfile.new(['linka_template', '.png'])
-
-    "convert -size #{@@img_size} xc:#{@@bg_color} #{@template_file.path}".launch()
-
-    clean_dir
-  end
-
   def gen_png_file(letter, output_filename)
-    "convert -font #{@@font_file} -fill #{@@fg_color} -gravity center -pointsize #{@@point_size} -draw 'text 0,0 \"#{letter}\"' #{@template_file.path} #{output_filename}".launch()
+    "convert -font #{@@font_file} -fill #{@@fg_color} -gravity center -pointsize #{@@point_size} -draw 'text 0,0 \"#{letter}\"' #{@template_file.path} #{output_filename}".run
   end
 
   def gen_pngs()
-    symbols = SymGenerator.all() 
+    sg = SymGenerator.instance
+    symbols = sg.all
 
     symbols.each do |a, b, c|
       output_filename = "#{ASSETS_DIR}/#{c}"
@@ -36,5 +37,5 @@ class AssetsGenerator
   end
 end
 
-asset_generator = AssetsGenerator.new()
-asset_generator.gen_pngs()
+asset_generator = AssetsGenerator.new
+asset_generator.gen_pngs

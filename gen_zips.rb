@@ -19,7 +19,7 @@ class LinkaGenerator
     @rows = rows
     @symbols = symbols
 
-    @descr = gen_descr()
+    @descr = gen_descr
   end
 
   def get_card_hash_template(card_id, title, image_path)
@@ -48,7 +48,7 @@ class LinkaGenerator
   end
 
   def gen_config()
-    hashes = gen_hashes()
+    hashes = gen_hashes
 
     src_hash = {
       version: '1.2',
@@ -93,15 +93,17 @@ class ZipGenerator
     FileUtils.cp(filenames, @@zip_tmp)
 
     FileUtils.cd(@@zip_tmp) do
-      "zip ../#{@out_name} *".launch()
+      "zip ../#{@out_name} *".run
     end
   end
 end
 
 FileUtils.rm Dir.glob('*.linka*'), :force => true
 
-symbols_en = SymGenerator.space_symbol() + SymGenerator.letters_en() + SymGenerator.digits() + SymGenerator.special_symbols()
-symbols_ru = SymGenerator.space_symbol() + SymGenerator.letters_ru() + SymGenerator.digits() + SymGenerator.special_symbols()
+sg = SymGenerator.instance
+
+symbols_en = sg.space_symbol() + sg.letters_en() + sg.digits() + sg.special_symbols()
+symbols_ru = sg.space_symbol() + sg.letters_ru() + sg.digits() + sg.special_symbols()
 
 sizes = [
   [1, 1], [2, 1], [2, 2], [3, 3], [4, 4]
